@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import useMarvelServices from '../../services/MarvelServices';
+import useMarvelService from '../../services/MarvelServices';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import AppBanner from "../appBanner/AppBanner";
@@ -10,7 +10,7 @@ import AppBanner from "../appBanner/AppBanner";
 const SinglePage = ({ Component, dataType }) => {
     const { id } = useParams();
     const [data, setData] = useState(null);
-    const { loading, error, getComic, getCharacter, clearError } = useMarvelServices();
+    const { loading, error, getComic, getCharacter, clearError } = useMarvelService();
 
     useEffect(() => {
         updateData()
